@@ -20,13 +20,11 @@ public class Main {
 
 
         if (hours == 00){
-
             row_one = 0;
             row_two = 0;
         } else {
             row_one = hours/5;
             row_two = hours%5;
-
         }
         System.out.println(row_one);
         System.out.println(row_two);
@@ -74,5 +72,6 @@ public class Main {
                 " ║   Y     ║║   Y    ║║   Y     ║║   Y    ║\n" +
                 " ╚═══════╝╚═══════╝╚═══════╝╚═══════╝");
     }
+
 
 }
