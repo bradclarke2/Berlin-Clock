@@ -13,6 +13,8 @@ public class Main {
         int minutes = dt.getMinuteOfHour();
         int seconds = dt.getSecondOfMinute();
 
+        System.out.println("Time is " +hours+":"+minutes+":"+seconds);
+
         int row_one;
         int row_two;
 
@@ -26,17 +28,12 @@ public class Main {
         }
         String lampOne = getLamp(row_one);
         String lampTwo = getLamp(row_two);
-        System.out.println(row_one);
-        System.out.println(row_two);
-
 
         int row_three = minutes/5;
         int row_four = minutes%5;
 
         String lampThree = getFiveMinuteLamp(row_three);
         String lampFour = getLamp(row_four);
-        System.out.println(row_three);
-        System.out.println(row_four);
 
         boolean top_lamp;
         String seconds_lamp;
@@ -44,17 +41,12 @@ public class Main {
 
 
         if (seconds%2 == 0){
-            top_lamp = false;
-            seconds_lamp = "R";
+            seconds_lamp = "Y";
 
 
         } else {
-            top_lamp = true;
-            seconds_lamp = "Y";
+            seconds_lamp = "R";
         }
-
-        System.out.println(top_lamp);
-
 
 
         System.out.println("                     * *");
