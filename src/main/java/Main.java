@@ -2,9 +2,7 @@ import org.joda.time.DateTime;
 import java.util.Date;
 
 
-/**
- * Created by Bradley on 30/12/2016.
- */
+
 public class Main {
     public static void main(String[] args) {
 
@@ -26,12 +24,17 @@ public class Main {
             row_one = hours/5;
             row_two = hours%5;
         }
+        String lampOne = getLamp(row_one);
+        String lampTwo = getLamp(row_two);
         System.out.println(row_one);
         System.out.println(row_two);
+
 
         int row_three = minutes/5;
         int row_four = minutes%5;
 
+        String lampThree = getFiveMinuteLamp(row_three);
+        String lampFour = getLamp(row_four);
         System.out.println(row_three);
         System.out.println(row_four);
 
@@ -60,18 +63,50 @@ public class Main {
         System.out.println("                   *     *");
         System.out.println("                     * *");
         System.out.println(" ╔═══════╗╔═══════╗╔═══════╗╔═══════╗\n" +
-                " ║   R     ║║   R    ║║   R     ║║   R    ║\n" +
+                " "+lampOne+"\n" +
                 " ╚═══════╝╚═══════╝╚═══════╝╚═══════╝\n" +
                 " ╔═══════╗╔═══════╗╔═══════╗╔═══════╗\n" +
-                " ║   R     ║║   R    ║║   R     ║║   R    ║\n" +
+                " "+lampTwo+"\n" +
                 " ╚═══════╝╚═══════╝╚═══════╝╚═══════╝\n" +
                 " ╔═╗╔═╗╔═╗ ╔═╗╔═╗╔═╗ ╔═╗╔═╗╔═╗ ╔═╗╔═╗\n" +
-                " ║Y║║Y ║║R║ ║Y║║Y║║R║ ║Y ║║Y║║R║ ║Y║║Y║\n" +
+                " "+lampThree+"\n" +
                 " ╚═╝╚═╝╚═╝ ╚═╝╚═╝╚═╝ ╚═╝╚═╝╚═╝ ╚═╝╚═╝\n" +
                 " ╔═══════╗╔═══════╗╔═══════╗╔═══════╗\n" +
-                " ║   Y     ║║   Y    ║║   Y     ║║   Y    ║\n" +
+                " "+lampFour+"\n" +
                 " ╚═══════╝╚═══════╝╚═══════╝╚═══════╝");
+
+
     }
 
+public static String getLamp(int i){
+        switch (i){
+            case 0:    return "║   R     ║║   R    ║║   R     ║║   R    ║";
+            case 1:    return "║   Y     ║║   R    ║║   R     ║║   R    ║";
+            case 2:    return "║   Y     ║║   Y    ║║   R     ║║   R    ║";
+            case 3:    return "║   Y     ║║   Y    ║║   Y     ║║   R    ║";
+            case 4:    return "║   Y     ║║   Y    ║║   Y     ║║   Y    ║";
+            default:    return "cannot populate the clock";
+        }
 
+
+    }
+
+    public static String getFiveMinuteLamp(int x){
+    switch (x){
+        case 0:    return "║R║║R ║║R║ ║R║║R║║R║ ║R ║║R║║R║ ║R║║R║";
+        case 1:    return "║Y║║R ║║R║ ║R║║R║║R║ ║R ║║R║║R║ ║R║║R║";
+        case 2:    return "║Y║║Y ║║R║ ║R║║R║║R║ ║R ║║R║║R║ ║R║║R║";
+        case 3:    return "║Y║║Y ║║Y║ ║R║║R║║R║ ║R ║║R║║R║ ║R║║R║";
+        case 4:    return "║Y║║Y ║║Y║ ║Y║║R║║R║ ║R ║║R║║R║ ║R║║R║";
+        case 5:    return "║Y║║Y ║║Y║ ║Y║║Y║║R║ ║R ║║R║║R║ ║R║║R║";
+        case 6:    return "║Y║║Y ║║Y║ ║Y║║Y║║Y║ ║R ║║R║║R║ ║R║║R║";
+        case 7:    return "║Y║║Y ║║Y║ ║Y║║Y║║Y║ ║Y ║║R║║R║ ║R║║R║";
+        case 8:    return "║Y║║Y ║║Y║ ║Y║║Y║║Y║ ║Y ║║Y║║R║ ║R║║R║";
+        case 9:    return "║Y║║Y ║║Y║ ║Y║║Y║║Y║ ║Y ║║Y║║Y║ ║R║║R║";
+        case 10:    return "║Y║║Y ║║Y║ ║Y║║Y║║Y║ ║Y ║║Y║║Y║ ║Y║║R║";
+        case 11:    return "║Y║║Y ║║Y║ ║Y║║Y║║Y║ ║Y ║║Y║║Y║ ║Y║║Y║";
+        default:    return "cannot populate the clock";
+
+    }
+    }
 }
